@@ -4,7 +4,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
 var https = require('https');
-var port = process.env.port || 3000
+var port = process.env.PORT || 3000;
 var stockList = ['GOOG', 'AAPL'];
 
 // get credentials from config file in dev, or from heroku env in deployment
