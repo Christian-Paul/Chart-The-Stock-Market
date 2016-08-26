@@ -4,7 +4,6 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
 var https = require('https');
-var config = require('./config.js');
 var port = process.env.port || 3000
 var stockList = ['GOOG', 'AAPL'];
 
