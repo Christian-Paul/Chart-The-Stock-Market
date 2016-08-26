@@ -1,3 +1,17 @@
-
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Helvetica, Arial;
+  font-weight: 300; }
+  html .interface-container .stocks-container, body .interface-container .stocks-container {
+    display: flex; }
+    html .interface-container .stocks-container .stock, body .interface-container .stocks-container .stock {
+      height: 2rem;
+      width: 4rem;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
