@@ -8,6 +8,15 @@ var config = require('./config.js');
 var port = process.env.port || 3000
 var stockList = ['GOOG', 'AAPL'];
 
+// get credentials from config file in dev, or from heroku env in deployment
+if(port === 3000) {
+	var config = require('./config.js');
+} else {
+	var config = {
+		quandlKey: process.env.quandlKey
+	};
+}
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 server.listen(port, function(req, res) {
