@@ -18,9 +18,17 @@ submitButton.click(function(e) {
 
 // emits an event and sends server the name of the stock to be removed
 stocksContainer.on('click', stock, function(e) {
-	var stockName = $(e.target).text();
 
-	socket.emit('remove stock', stockName);
+	var stocksRemaining = document.querySelector('.stocks-container').children.length;
+
+	// only remove stock if there's more than one stock left
+	if(stocksRemaining > 1) {
+		var stockName = $(e.target).text();
+		socket.emit('remove stock', stockName);
+	} else {
+		alert('Cannot remove final stock');
+	}
+
 });
 
 // server emits this event when it updates the list of tracked stocks
