@@ -1,10 +1,17 @@
 html, body
 	margin: 0
 	padding: 0
+	background-color: #f5f5f5
 	font-family: 'Roboto', Helvetica, Arial
 	font-weight: 300
 
 	#container
+		margin: 0 auto
+		margin-top: 2rem
+		max-width: 95%
+
+		.highcharts-button-box
+			fill: none
 
 	.interface-container
 		width: 100%
@@ -18,13 +25,20 @@ html, body
 
 			.stock
 				height: 2rem
-				width: 4rem
-				background-color: #eee
-				border-radius: 2px
+				padding-left: 0.75rem
+				background-color: #E0E0E0
+				border-radius: 25px
 				cursor: pointer
 				display: flex
 				justify-content: center
 				align-items: center
+				
+				.close-btn
+					margin-left: 0.5rem
+					margin-right: 0.5rem
+					color: #888
+					font-weight: bold
+					font-size: 20px
 
 			.stock + .stock
 				margin-left: 1rem

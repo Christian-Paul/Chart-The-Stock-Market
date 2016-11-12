@@ -34,6 +34,6 @@ function buildStockBoard(names) {
 	stocksContainer.empty();
 
 	for(var i = 0; i < names.length; i++) {
-		stocksContainer.append('<div class="stock">' + names[i] + '</div>');
+		stocksContainer.append('<div class="stock">' + names[i] + '<span class="close-btn">&times;</span></div>');
 	}
 };
