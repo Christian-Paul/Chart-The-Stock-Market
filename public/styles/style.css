@@ -1,12 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #fafafa;
   font-family: "Roboto", Helvetica, Arial;
   font-weight: 300; }
   html #container, body #container {
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     max-width: 95%; }
     html #container .highcharts-button-box, body #container .highcharts-button-box {
       fill: none; }
@@ -17,6 +17,7 @@ html, body {
     align-items: center; }
     html .interface-container .stocks-container, body .interface-container .stocks-container {
       max-width: 80%;
+      margin-top: 1.5rem;
       display: flex; }
       html .interface-container .stocks-container .stock, body .interface-container .stocks-container .stock {
         height: 2rem;
@@ -36,9 +37,12 @@ html, body {
       html .interface-container .stocks-container .stock + .stock, body .interface-container .stocks-container .stock + .stock {
         margin-left: 1rem; }
     html .interface-container .user-interface, body .interface-container .user-interface {
-      margin-top: 3rem; }
+      margin-top: 3rem;
+      margin-bottom: 3rem; }
       html .interface-container .user-interface .user-input, body .interface-container .user-interface .user-input {
-        height: 2rem; }
+        height: 2rem;
+        margin-right: 0.5rem;
+        padding-left: 0.25rem; }
       html .interface-container .user-interface .submit-button, body .interface-container .user-interface .submit-button {
         background-color: #4C4CFF;
         height: 2rem;
