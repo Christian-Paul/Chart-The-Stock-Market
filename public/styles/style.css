@@ -4,9 +4,13 @@ html, body {
   background-color: #fafafa;
   font-family: "Roboto", Helvetica, Arial;
   font-weight: 300; }
+  html .title, body .title {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 300;
+    font-size: 3rem; }
   html #container, body #container {
     margin: 0 auto;
-    margin-top: 1rem;
     max-width: 95%; }
     html #container .highcharts-button-box, body #container .highcharts-button-box {
       fill: none; }
@@ -44,7 +48,7 @@ html, body {
         margin-right: 0.5rem;
         padding-left: 0.25rem; }
       html .interface-container .user-interface .submit-button, body .interface-container .user-interface .submit-button {
-        background-color: #4C4CFF;
+        background-color: #4CAF50;
         height: 2rem;
         width: 6rem;
         border: none;
