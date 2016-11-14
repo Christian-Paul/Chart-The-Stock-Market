@@ -8,11 +8,38 @@ var socket = io.connect();
 submitButton.click(function(e) {
 	e.preventDefault();
 
-	if(userInput.val()) {
-		var stockName = userInput.val().toUpperCase();
-		userInput.val('');
-		socket.emit('add stock', stockName);
-	};
+	// get user input
+	var stockName = userInput.val().toUpperCase();
+
+
+	// get all currently tracked stocks
+	var stockHolder = document.querySelectorAll('.stocks-container .stock');
+
+	var trackedStocks = [];
+	stockHolder.forEach(function(stock) {
+		trackedStocks.push(stock.firstChild.data);
+	});
+
+	// if user input is empty send error
+	if(!stockName) {
+		alert('Please enter a stock code');
+	}
+	else if (trackedStocks.indexOf(stockName) !== -1) {
+		// if user submits a stock that's already tracked, send error
+		alert('This stock is already being tracked')
+	} else {
+
+		// if the stock the user tried to add doesn't exist, send error
+		$.getJSON('/api/' + stockName)
+			.done(function(data) {
+				userInput.val('');
+				socket.emit('add stock', stockName);
+			})
+			.fail(function(data) {
+				// notify user that the stock doesn't exist
+				alert('Stock unavailable or doesn\'t exist');
+			})
+	}
 
 });
 
