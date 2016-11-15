@@ -50,7 +50,7 @@ stocksContainer.on('click', stock, function(e) {
 
 	// only remove stock if there's more than one stock left
 	if(stocksRemaining > 1) {
-		var stockName = $(e.target).text();
+		var stockName = e.target.firstChild.textContent;
 		socket.emit('remove stock', stockName);
 	} else {
 		alert('Cannot remove final stock');
