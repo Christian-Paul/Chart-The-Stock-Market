@@ -20,10 +20,9 @@ const options = {
 
 $('#tickers').easyAutocomplete(options);
 
-// emits an event and sends server the name of the stock to be added
-submitButton.click(function(e) {
-	e.preventDefault();
 
+// emits an event and sends server the name of the stock to be added
+function handleSubmit() {
 	// get all currently tracked stocks
 	var stockHolder = document.querySelectorAll('.stocks-container .stock');
 
@@ -52,7 +51,19 @@ submitButton.click(function(e) {
 				alert('Stock unavailable or doesn\'t exist');
 			})
 	}
+}
 
+$('#tickers').keypress(function(event) {
+    if(event.which == 13) {
+        event.preventDefault();
+        handleSubmit();
+        $('#tickers').blur()
+    }
+});
+
+submitButton.click(function(e) {
+	e.preventDefault();
+	handleSubmit();
 });
 
 // emits an event and sends server the name of the stock to be removed
