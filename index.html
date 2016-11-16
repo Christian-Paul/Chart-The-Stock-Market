@@ -3,10 +3,13 @@
 		<title>Chart the Stock Market</title>
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="./public/jquery.easy-autocomplete.min.js"></script> 
 		<script src="https://code.highcharts.com/stock/highstock.js"></script>
 		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:700,500,400,300,100|Comfortaa" rel="stylesheet">
 		<link rel="stylesheet" href="./public/styles/style.css">
+		<link rel="stylesheet" href="./public/easy-autocomplete.min.css"> 
 	</head>
 	<body>
 		<h1 class='title'>Chart the Stock Market</h1>
@@ -14,7 +17,7 @@
 		<div class="interface-container">
 			<div class="stocks-container"></div>
 			<div class="user-interface">
-				<input class='user-input' type="text">
+				<input class='user-input' id='tickers' type="text">
 				<button class="submit-button">Add Stock</button>
 			</div>
 		</div>

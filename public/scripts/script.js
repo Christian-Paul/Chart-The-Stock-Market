@@ -4,6 +4,17 @@ var stocksContainer = $('.stocks-container');
 var stock = $('.stock');
 var socket = io.connect();
 
+const options = {
+	url: '../public/tickers.js',
+	list: {
+		match: {
+			enabled: true
+		}
+	}
+};
+
+$('#tickers').easyAutocomplete(options);
+
 // emits an event and sends server the name of the stock to be added
 submitButton.click(function(e) {
 	e.preventDefault();
