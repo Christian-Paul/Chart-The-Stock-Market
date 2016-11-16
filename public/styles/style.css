@@ -41,12 +41,13 @@ html, body {
       html .interface-container .stocks-container .stock + .stock, body .interface-container .stocks-container .stock + .stock {
         margin-left: 1rem; }
     html .interface-container .user-interface, body .interface-container .user-interface {
-      margin-top: 2rem;
+      margin-top: 4rem;
       margin-bottom: 2rem;
       display: flex;
       align-items: center; }
       html .interface-container .user-interface .user-input, body .interface-container .user-interface .user-input {
-        height: 2rem; }
+        height: 2rem;
+        width: 25rem; }
       html .interface-container .user-interface .submit-button, body .interface-container .user-interface .submit-button {
         background-color: #4CAF50;
         height: 2rem;

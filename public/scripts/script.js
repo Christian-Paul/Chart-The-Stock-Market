@@ -3,12 +3,17 @@ var submitButton = $('.submit-button');
 var stocksContainer = $('.stocks-container');
 var stock = $('.stock');
 var socket = io.connect();
+var stockName = '';
 
 const options = {
-	url: '../public/tickers.js',
+	url: '../public/autocomplete-ticker-name-data.json',
+	getValue: 'name',
 	list: {
 		match: {
 			enabled: true
+		},
+		onSelectItemEvent: function() {
+			stockName = $("#tickers").getSelectedItemData().code;
 		}
 	}
 };
@@ -19,10 +24,6 @@ $('#tickers').easyAutocomplete(options);
 submitButton.click(function(e) {
 	e.preventDefault();
 
-	// get user input
-	var stockName = userInput.val().toUpperCase();
-
-
 	// get all currently tracked stocks
 	var stockHolder = document.querySelectorAll('.stocks-container .stock');
 
@@ -32,7 +33,7 @@ submitButton.click(function(e) {
 	});
 
 	// if user input is empty send error
-	if(!stockName) {
+	if(stockName === '') {
 		alert('Please enter a stock code');
 	}
 	else if (trackedStocks.indexOf(stockName) !== -1) {
