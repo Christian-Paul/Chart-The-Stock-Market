@@ -6,7 +6,8 @@ html, body {
   font-weight: 300; }
   html .title, body .title {
     text-align: center;
-    margin-top: 2rem;
+    margin: 0;
+    padding-top: 1rem;
     font-weight: 300;
     font-size: 4rem; }
   html #container, body #container {
@@ -21,7 +22,6 @@ html, body {
     align-items: center; }
     html .interface-container .stocks-container, body .interface-container .stocks-container {
       max-width: 80%;
-      margin-top: 1.5rem;
       display: flex; }
       html .interface-container .stocks-container .stock, body .interface-container .stocks-container .stock {
         height: 2rem;
@@ -41,8 +41,8 @@ html, body {
       html .interface-container .stocks-container .stock + .stock, body .interface-container .stocks-container .stock + .stock {
         margin-left: 1rem; }
     html .interface-container .user-interface, body .interface-container .user-interface {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center; }
       html .interface-container .user-interface .user-input, body .interface-container .user-interface .user-input {
